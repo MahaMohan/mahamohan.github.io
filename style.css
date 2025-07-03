@@ -1,0 +1,135 @@
+/* Global styles */
+body {
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Section backgrounds */
+.my-div, .my-div1, .my-div2, .my-div3 {
+  width: 100%;
+  padding: 2em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.my-div { background-image: url('./assets/widecoding.jpg'); }
+.my-div1 { background-image: url('./assets/darkcolor.jpg'); }
+.my-div2 { background-image: url('./assets/mountain.jpg'); }
+.my-div3 { background-image: url('./assets/flutter.jpg'); }
+
+/* Project grid styles */
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Each project card */
+.project-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1em;
+  margin: 1em;
+  flex: 1 1 300px;
+  max-width: 350px;
+  box-sizing: border-box;
+  color: white;
+}
+
+/* Image icons inside skills/tools/projects */
+.project-card img,
+.my-div2 img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Contact section */
+.contact-section {
+  margin: auto;
+  width: 90%;
+  padding: 4em 2em;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .my-div, .my-div1, .my-div2, .my-div3 {
+    padding: 1.5em 1em;
+  }
+
+  .project-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin: 1em 0;
+  }
+
+  .project-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  h1, h2, h3, h4, h5 {
+    word-wrap: break-word;
+  }
+}
+
+button {
+    display: inline-block;
+    background-color: #2d2d2d;
+    border-radius: 10px;
+    border: 4px double #2d2d2d;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    font-size: 10px;
+    padding: 10px;
+    width: 160px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+button:hover {
+    background-color: #000000;
+}
+button:hover span {
+    padding-right: 25px;
+}
+button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
