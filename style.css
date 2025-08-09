@@ -38,26 +38,100 @@ body {
   box-sizing: border-box;
 }
 
-/* Each project card */
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* center horizontally */
+  gap: 20px; /* spacing between cards */
+  padding: 10px;
+}
+
+/* Default: stack vertically on small screens */
+.project-card {
+  flex: 1 1 100%; /* take full width */
+  max-width: 400px; /* optional max width */
+}
+
+/* For larger screens - horizontal layout */
+@media (min-width: 900px) {
+  .project-card {
+    flex: 1 1 30%; /* roughly 3 cards per row */
+    max-width: none;
+  }
+}
+
+
 .project-card {
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 1em;
-  margin: 1em;
-  flex: 1 1 300px;
-  max-width: 350px;
-  box-sizing: border-box;
   color: white;
+  padding: 15px;
+  border-radius: 8px;
+  max-width: 350px;
+  margin: 20px auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Image icons inside skills/tools/projects */
-.project-card img,
-.my-div2 img {
-  max-width: 100%;
-  height: auto;
+.project-card img.project-image {
+  display: block;
+  margin: 10px auto;
+  max-height: 190px;
+  object-fit: contain;
+  border-radius: 5px;
 }
+
+.project-card h4 {
+  margin: 10px 0 6px;
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.project-card h4 a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.project-card h4 a:hover {
+  color: #1e90ff;
+}
+
+.project-card p {
+  margin: 8px 10px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  text-align: justify;
+}
+
+.project-card h5 {
+  margin: 15px 10px 5px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.project-card .tools {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 10px 0 0;
+}
+
+.project-card .tools img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  filter: brightness(1); /* keep icons bright */
+  transition: transform 0.2s ease;
+}
+
+.project-card .tools img:hover {
+  transform: scale(1.1);
+}
+
 
 /* Contact section */
 .contact-section {
